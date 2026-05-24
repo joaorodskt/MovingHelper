@@ -35,16 +35,15 @@ public class Client {
 	private LocalDate birthdate;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "address_id")
+	@JoinColumn(name = "address_id", referencedColumnName = "id")
 	private Address address;
 	
 	public Client() {
-		super();
 	}
 
-	public Client(Long i, String name, String surname, String dni, String email, String phoneNumber,
+	public Client(Long id, String name, String surname, String dni, String email, String phoneNumber,
 			LocalDate birthdate, Address address) {
-		this.id = i;
+		this.id = id;
 		this.name = name;
 		this.surname = surname;
 		this.dni = dni;
